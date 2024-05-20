@@ -13,6 +13,7 @@ import { FormSuccess } from "../login-success";
 import { newPassword } from "@/actions/new-password";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export const NewPasswordForm = () => {
 
@@ -28,11 +29,11 @@ export const NewPasswordForm = () => {
             password: "",
         }
     });
-    const onSubmit = (values: z.infer<typeof NewPasswordSchema>) =>{
+    const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => {
         setError("");
         setSuccess("");
-        startTransition(()=>{
-            newPassword(values, token).then((data)=>{
+        startTransition(() => {
+            newPassword(values, token).then((data) => {
                 setError(data?.error);
                 setSuccess(data?.success)
             });
@@ -40,10 +41,10 @@ export const NewPasswordForm = () => {
     };
 
     return (
-        <CardWrapper headerLabel="Enter your new password" backButtonLabel="Back to login" backButtonHref="/auth/login">
+        <CardWrapper headerLabel="Enter your new password">
             <Form {...form}>
                 <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-                    <FormField disabled={isPending} control={form.control} name="password" render={({ field })=>(
+                    <FormField disabled={isPending} control={form.control} name="password" render={({ field }) => (
                         <FormItem>
                             <FormLabel>
                                 Password
@@ -51,14 +52,21 @@ export const NewPasswordForm = () => {
                             <FormControl>
                                 <Input {...field} placeholder="******" type="password" />
                             </FormControl>
-                            <FormMessage/>
+                            <FormMessage />
                         </FormItem>
-                    )}/>
+                    )} />
                     <FormError message={error} />
                     <FormSuccess message={success} />
                     <Button disabled={isPending} type="submit" className="w-full">
                         Reset password
                     </Button>
+                    <div className="flex justify-center items-center">
+                        <Button variant="link" className="font-normal w-full" size="sm" asChild>
+                            <Link href="/auth">
+                                Back to login
+                            </Link>
+                        </Button>
+                    </div>
                 </form>
             </Form>
         </CardWrapper>

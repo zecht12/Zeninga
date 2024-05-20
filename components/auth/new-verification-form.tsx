@@ -6,6 +6,8 @@ import { useCallback, useEffect, useState } from "react"
 import { newVerification } from "@/actions/new-verification"
 import { FormError } from "../login-error"
 import { FormSuccess } from "../login-success"
+import { Button } from "../ui/button"
+import Link from "next/link"
 
 export const NewVerificationForm = () => {
     const [error, setError] = useState<string | undefined>();
@@ -13,36 +15,43 @@ export const NewVerificationForm = () => {
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
 
-    const onSubmit = useCallback(() =>{
+    const onSubmit = useCallback(() => {
         if (success || error) return;
-        if (!token){
+        if (!token) {
             setError("Token menghilang. Silakan ulangi lagi.");
             return;
         }
         newVerification(token)
-        .then((data)=>{
-            setSuccess(data.success);
-            setError(data.error);
-        })
-        .catch((err) => {
-            setError("Terjadi kesalahan!")
-        });
-    },[token, success, error])
+            .then((data) => {
+                setSuccess(data.success);
+                setError(data.error);
+            })
+            .catch((err) => {
+                setError("Terjadi kesalahan!")
+            });
+    }, [token, success, error])
 
-    useEffect(()=>{
+    useEffect(() => {
         onSubmit();
-    },[onSubmit])
+    }, [onSubmit])
 
-    return(
-        <CardWrapper headerLabel="Confirm your verification!" backButtonHref="/auth/login" backButtonLabel="Back to login">
+    return (
+        <CardWrapper headerLabel="Confirm your verification!">
             <div className="flex items-center justify-center w-full">
-                {!success && !error &&(
-                    <BeatLoader/>
+                {!success && !error && (
+                    <BeatLoader />
                 )}
                 <FormSuccess message={success} />
-                {!success &&(
+                {!success && (
                     <FormError message={error} />
                 )}
+            </div>
+            <div className="flex justify-center items-center">
+                <Button variant="link" className="font-normal w-full" size="sm" asChild>
+                    <Link href="/auth">
+                        Back to login
+                    </Link>
+                </Button>
             </div>
         </CardWrapper>
     )

@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        codec: ["CodecPro","sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        CodecProBold:["CodecProBold", "sans-serif"],
+        CodecProExtraBold:["CodecProExtraBold", "sans-serif"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

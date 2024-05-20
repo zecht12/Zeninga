@@ -9,7 +9,7 @@ const ErrorCard = () => {
                 <Header label="Terjadi Kesalahan!!!"/>
             </CardHeader>
             <CardFooter>
-                <BackButton label="Back to login" href="/auth/login" />
+                <BackButton label="Back to login" href="/auth" />
             </CardFooter>
         </Card>
     )

@@ -10,7 +10,7 @@ import { getAccountByUserId } from "./data/account";
 
 export const {handlers: { GET, POST },auth,signIn,signOut} = NextAuth({
     pages: {
-        signIn: "/auth/login",
+        signIn: "/auth",
         error: "/auth/error",
     },
     events: {

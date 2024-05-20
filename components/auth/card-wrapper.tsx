@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { BackButton } from "./back-button";
 import { Header } from "./header";
@@ -8,12 +10,9 @@ import { Social } from "./social";
 interface CardWrapperProps{
     children: React.ReactNode,
     headerLabel: string,
-    backButtonLabel: string,
-    backButtonHref: string,
-    showSocial?: boolean
 };
 
-export const CardWrapper = ({children, backButtonHref, backButtonLabel,headerLabel,showSocial}:CardWrapperProps) => {
+export const CardWrapper = ({children, headerLabel}:CardWrapperProps) => {
     return (
         <Card className="w-[400px] shadow-md">
             <CardHeader>
@@ -22,14 +21,6 @@ export const CardWrapper = ({children, backButtonHref, backButtonLabel,headerLab
             <CardContent>
                 {children}
             </CardContent>
-            {showSocial &&(
-                <CardFooter>
-                    <Social/>
-                </CardFooter>
-            )}
-            <CardFooter>
-                <BackButton label={backButtonLabel} href={backButtonHref} />
-            </CardFooter>
         </Card>
     )
 }

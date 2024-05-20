@@ -14,8 +14,7 @@
      * @type {string[]}
      */
     export const authRoutes = [
-        "/auth/login",
-        "/auth/register",
+        "/auth",
         "/auth/error",
         "/auth/reset",
         "/auth/new-password",

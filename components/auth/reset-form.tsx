@@ -12,6 +12,7 @@ import { FormError } from "../login-error";
 import { FormSuccess } from "../login-success";
 import { reset } from "@/actions/reset";
 import { useState, useTransition } from "react";
+import Link from "next/link";
 
 export const ResetForm = () => {
 
@@ -37,7 +38,7 @@ export const ResetForm = () => {
     };
 
     return (
-        <CardWrapper headerLabel="Reset your password" backButtonLabel="Back to login" backButtonHref="/auth/login">
+        <CardWrapper headerLabel="Reset your password">
             <Form {...form}>
                 <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
                     <FormField disabled={isPending} control={form.control} name="email" render={({ field })=>(
@@ -56,6 +57,13 @@ export const ResetForm = () => {
                     <Button disabled={isPending} type="submit" className="w-full">
                         Send reset email
                     </Button>
+                    <div className="flex justify-center items-center">
+                        <Button variant="link" className="font-normal w-full" size="sm" asChild>
+                            <Link href="/auth">
+                                Back to login
+                            </Link>
+                        </Button>
+                    </div>
                 </form>
             </Form>
         </CardWrapper>

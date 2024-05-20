@@ -1,13 +1,33 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Poppins } from "next/font/google";
+import { League_Spartan, Montserrat, Open_Sans, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { LoginButton } from "@/components/auth/login-button";
 
 const font = Poppins({
   subsets: ["latin"],
+  weight: ["700"]
+});
+
+const head = League_Spartan({
+  subsets: ["latin"],
+  weight: ["700"]
+});
+
+const body = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"]
+});
+
+const bodyBold = Montserrat({
+  subsets: ["latin"],
   weight: ["600"]
 });
+
+const button = Open_Sans({
+  subsets: ["latin"],
+  weight: ["700"]
+})
 
 export default function Home() {
   return (
@@ -16,15 +36,15 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <Image src="/images/logo.jpg" alt="image" width={200} height={200} className='rounded-full shadow-xl shadow-neutral-500' />
         </div>
-        <h1 className={cn( "text-6xl font-bold text-white drop-shadow-md", font.className,)}>
-            Welcome to <span className="text-red-500">ZechtNime</span>
+        <h1 className="text-6xl font-CodecProExtraBold text-white drop-shadow-md">
+            Welcome to <span className="text-red-500">Zeninga</span>
           </h1>
-          <p className="text-white text-lg">
+          <p className={cn("text-white text-lg", body.className)}>
             Make your dream come true
           </p>
           <div>
             <LoginButton mode="redirect" asChild>
-              <Button variant="secondary" size="xl">
+              <Button variant="secondary" size="xl" className={cn(button.className)}>
                 Sign in
               </Button>
             </LoginButton>

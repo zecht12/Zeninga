@@ -109,20 +109,61 @@ export const cardVariantsFadeIn: Variants = {
     }
 };
 
-export const cardVariantsX: Variants = {
+export const cardVariantsX1: Variants = {
     offscreen: {
-        x: -10,
-        opacity: 0
+        x: -700,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            duration: 2,
+        },
     },
     onscreen: {
         x: 0,
         opacity: 1,
         transition: {
             type: "spring",
-            duration: 1.8
-        }
+            duration: 2,
+        },
+    },
+    exitscreen: {
+        x: 700,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            duration: 2,
+        },
     }
 };
+
+export const cardVariantsX2: Variants = {
+    offscreen: {
+        x: 700,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            duration: 2,
+        },
+    },
+    onscreen: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            duration: 2,
+        },
+    },
+    exitscreen: {
+        x: -700,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            duration: 2,
+        },
+    }
+};
+
+
 
 export const cardVariantsY1: Variants = {
     offscreen: {
