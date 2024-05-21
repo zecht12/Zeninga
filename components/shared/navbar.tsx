@@ -52,9 +52,9 @@ const Navbar = () => {
             <div className='flex justify-between items-center w-full h-full px-6 2xl:px-16 '>
                 <div className='flex items-center justify-start'>
                     <Link href="/home" className='flex items-center gap-3'>
-                        <Image src="/images/logo.jpg" alt="image" width={40} height={40} className='rounded-full' />
+                        <Image src="/avatar.jpg" alt="image" width={40} height={40} className='rounded-full' />
                         <p className={cn( "text-red-500 font-outline-1 md:text-2xl", font.className,)}>
-                            ZechtNime
+                            Zeninga
                         </p>
                     </Link>
                 </div>

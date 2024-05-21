@@ -31,10 +31,10 @@ const button = Open_Sans({
 
 export default function Home() {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 to-zinc-900 ">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 ">
       <div className=" space-y-6 text-center">
         <div className="flex items-center justify-center">
-          <Image src="/images/logo.jpg" alt="image" width={200} height={200} className='rounded-full shadow-xl shadow-neutral-500' />
+          <Image src="/avatar.jpg" alt="image" width={200} height={200} className='rounded-full shadow-xl shadow-slate-600' />
         </div>
         <h1 className="text-6xl font-CodecProExtraBold text-white drop-shadow-md">
             Welcome to <span className="text-red-500">Zeninga</span>
