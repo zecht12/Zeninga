@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomePage = () => {
     return (
-        <div>HomePage</div>
+        <div className='h-full w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900'>HomePage</div>
     )
 }
 
