@@ -37,6 +37,7 @@ export const LoginForm = () => {
             password: "",
         }
     });
+
     const onSubmit = (values: z.infer<typeof LoginSchema>) => {
         setError("");
         setSuccess("");
@@ -48,7 +49,7 @@ export const LoginForm = () => {
                 }
                 if (data?.success) {
                     form.reset();
-                    setError(data.success);
+                    setSuccess(data.success);
                 }
                 if (data?.twoFactor) {
                     setShowTwoFactor(true);
@@ -67,7 +68,7 @@ export const LoginForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsFadeIn : cardVariantsX2 }
+                        variants={isDesktop ? cardVariantsX2 : cardVariantsFadeIn}
                         className="md:w-1/2 h-full md:flex hidden items-center justify-center"
                     >
                         <TwoBCanvas className="w-full h-full" />
@@ -76,7 +77,7 @@ export const LoginForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsFadeIn : cardVariantsX1 }
+                        variants={isDesktop ? cardVariantsX1 : cardVariantsFadeIn}
                         className="md:w-1/2 w-full h-full flex items-center justify-center"
                     >
                         <CardWrapper headerLabel="Welcome back!">
@@ -133,9 +134,9 @@ export const LoginForm = () => {
                                         {showTwoFactor ? "Confirm" : "Login"}
                                     </Button>
                                     <div className="flex justify-center items-center">
-                                    <Button variant="link" size="sm" className="mt-4" asChild>
+                                        <Button variant="link" size="sm" className="mt-4" asChild>
                                             <Link href="/auth/register">
-                                            Don't have an account? Register
+                                                Don&apos;t have an account? Register
                                             </Link>
                                         </Button>
                                     </div>
