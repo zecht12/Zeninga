@@ -40,7 +40,7 @@ const Navbar = () => {
                         <Link href='/home' className='flex justify-center items-center scroll-smooth transition delay-100'>
                             <Image src={'/avatar.jpg'} width={40} height={40} alt="logo" priority={true} className="w-[40px] h-[40px] hover:scale-110 rounded-full shadow-md shadow-slate-500" />
                         </Link>
-                        <p className={cn('text-2xl font-bold cursor-default text-red-500', head.className)}>Zeninga</p>
+                        <p className={cn('text-2xl font-bold cursor-default text-[#58d8fc]', head.className)}>Zeninga</p>
                     </div>
                     <Socials />
                 </div>
