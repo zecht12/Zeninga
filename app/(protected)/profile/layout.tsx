@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import SettingNavbar from '@/components/shared/setting-navbar'
 import '../../globals.css'
+import SettingNavbar from '@/components/shared/setting-navbar'
 
 export const metadata: Metadata = {
     title: 'Profile',

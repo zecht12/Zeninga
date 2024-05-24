@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { League_Spartan, Montserrat, Open_Sans, Poppins } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { logout } from '@/actions/logout';
 
 const font = Poppins({
     subsets: ["latin"],

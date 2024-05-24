@@ -1,5 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
+
 import { CardWrapper } from "./card-wrapper";
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormLabel, FormItem, FormMessage } from "../ui/form";

@@ -1,10 +1,13 @@
 'use client'
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {HiHome} from 'react-icons/hi2';
+import { IoPerson } from "react-icons/io5";
 
 export const navData = [
-    { name: 'home', path: '#home', icon: <HiHome /> },
+    { name: 'Home', path: '#home', icon: <HiHome /> },
+    { name: 'Profile', path: '/profile', icon: <IoPerson /> },
 ];
 
 const Sidebar = () => {
