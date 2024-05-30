@@ -71,7 +71,7 @@ const UserEdit = () => {
     }
 
     return (
-        <div className={`bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 to-zinc-900 ${user?.role === "USER" && user?.isOAuth === true && "w-full h-screen"} ${user?.role === "USER" && user?.isOAuth === false && "w-full h-auto"} ${user?.role === "ADMIN" && user?.isOAuth === true && "w-full h-screen"} ${user?.role === "ADMIN" && user?.isOAuth === false && "w-full h-auto"} md:py-12 py-14 px-4 flex items-center justify-center`}>
+        <div className={`bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 ${user?.role === "USER" && user?.isOAuth === true && "w-full h-screen"} ${user?.role === "USER" && user?.isOAuth === false && "w-full h-auto"} ${user?.role === "ADMIN" && user?.isOAuth === true && "w-full h-screen"} ${user?.role === "ADMIN" && user?.isOAuth === false && "w-full h-auto"} md:py-12 py-14 px-4 flex items-center justify-center`}>
             <Card className="w-[600px]">
                 <CardHeader>
                     <p className="text-2xl font-semibold text-center">

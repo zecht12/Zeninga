@@ -12,7 +12,7 @@ interface UserInfoProps {
 
 const UserInfo = ({ user }: UserInfoProps) => {
     return (
-        <div className="h-screen w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 to-zinc-900 md:py-12 py-14 px-4 flex items-center justify-center">
+        <div className="h-screen w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 md:py-12 py-14 px-4 flex items-center justify-center">
             <Card className='w-[500px]'>
                 <CardHeader>
                     <p className="text-xl font-semibold text-center">Profile</p>

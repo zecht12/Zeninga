@@ -7,7 +7,6 @@ import { IoPerson } from "react-icons/io5";
 
 export const navData = [
     { name: 'Home', path: '#home', icon: <HiHome /> },
-    { name: 'Profile', path: '/profile', icon: <IoPerson /> },
 ];
 
 const Sidebar = () => {

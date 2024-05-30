@@ -30,21 +30,19 @@ export const RegisterForm = () => {
         defaultValues: {
             email: "",
             password: "",
-            name:""
+            name: ""
         }
     });
-    const onSubmit = (values: z.infer<typeof RegisterSchema>) =>{
+    const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
         setError("");
         setSuccess("");
-        startTransition(()=>{
-            Register(values).then((data)=>{
+        startTransition(() => {
+            Register(values).then((data) => {
                 setError(data.error),
-                setSuccess(data.success)
+                    setSuccess(data.success)
             });
         })
     };
-
-    const isDesktop = useIsDesktop();
 
     return (
         <div className="w-full h-screen flex items-center md:justify-between justify-center md:px-12 px-4">
@@ -54,8 +52,8 @@ export const RegisterForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsFadeIn : cardVariantsX2 }
-                        className="md:w-1/2 w-full h-full flex items-center justify-center"
+                        variants={cardVariantsFadeIn}
+                        className="md:w-1/2 w-full h-full flex md:hidden items-center justify-center"
                     >
                         <CardWrapper headerLabel="Create an account">
                             <Form {...form}>
@@ -114,7 +112,67 @@ export const RegisterForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsFadeIn : cardVariantsX1 }
+                        variants={cardVariantsX2}
+                        className="md:w-1/2 w-full h-full md:flex hidden items-center justify-center"
+                    >
+                        <CardWrapper headerLabel="Create an account">
+                            <Form {...form}>
+                                <form className="space-y-6 w-full" onSubmit={form.handleSubmit(onSubmit)}>
+                                    <FormField disabled={isPending} control={form.control} name="name" render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>
+                                                Nama
+                                            </FormLabel>
+                                            <FormControl>
+                                                <Input {...field} placeholder="Nama lengkap" />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )} />
+                                    <FormField disabled={isPending} control={form.control} name="email" render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>
+                                                Email
+                                            </FormLabel>
+                                            <FormControl>
+                                                <Input {...field} placeholder="Email address" type="email" />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )} />
+                                    <FormField disabled={isPending} control={form.control} name="password" render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>
+                                                Password
+                                            </FormLabel>
+                                            <FormControl>
+                                                <Input {...field} placeholder="******" type="password" />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )} />
+                                    <FormError message={error} />
+                                    <FormSuccess message={success} />
+                                    <Social />
+                                    <Button disabled={isPending} type="submit" className="w-full">
+                                        Create an account
+                                    </Button>
+                                    <div className="flex justify-center items-center">
+                                        <Button variant="link" size="sm" className="mt-4" asChild>
+                                            <Link href="/auth">
+                                                Have an account? Login
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </form>
+                            </Form>
+                        </CardWrapper>
+                    </motion.div>
+                    <motion.div
+                        initial="offscreen"
+                        animate="onscreen"
+                        exit="exitscreen"
+                        variants={cardVariantsX1}
                         className="md:w-1/2 h-full md:flex hidden items-center justify-center"
                     >
                         <TwoBCanvas className="w-full h-full" />

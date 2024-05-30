@@ -1,33 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { League_Spartan, Montserrat, Open_Sans, Poppins } from "next/font/google";
+import { body, button } from "@/utils/font"
 import { cn } from "@/lib/utils";
 import { LoginButton } from "@/components/auth/login-button";
-
-const font = Poppins({
-  subsets: ["latin"],
-  weight: ["700"]
-});
-
-const head = League_Spartan({
-  subsets: ["latin"],
-  weight: ["700"]
-});
-
-const body = Montserrat({
-  subsets: ["latin"],
-  weight: ["400"]
-});
-
-const bodyBold = Montserrat({
-  subsets: ["latin"],
-  weight: ["600"]
-});
-
-const button = Open_Sans({
-  subsets: ["latin"],
-  weight: ["700"]
-})
 
 export default function Home() {
   return (

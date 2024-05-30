@@ -58,8 +58,6 @@ export const LoginForm = () => {
         })
     };
 
-    const isDesktop = useIsDesktop();
-
     return (
         <div className="w-full h-screen flex items-center md:justify-between justify-center md:px-12 px-4">
             <AnimatePresence mode="wait">
@@ -68,7 +66,7 @@ export const LoginForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsX2 : cardVariantsFadeIn}
+                        variants={cardVariantsX2}
                         className="md:w-1/2 h-full md:flex hidden items-center justify-center"
                     >
                         <TwoBCanvas className="w-full h-full" />
@@ -77,8 +75,79 @@ export const LoginForm = () => {
                         initial="offscreen"
                         animate="onscreen"
                         exit="exitscreen"
-                        variants={isDesktop ? cardVariantsX1 : cardVariantsFadeIn}
-                        className="md:w-1/2 w-full h-full flex items-center justify-center"
+                        variants={cardVariantsX1}
+                        className="md:w-1/2 w-full h-full md:flex hidden items-center justify-center"
+                    >
+                        <CardWrapper headerLabel="Welcome back!">
+                            <Form {...form}>
+                                <form className="space-y-6 w-full" onSubmit={form.handleSubmit(onSubmit)}>
+                                    {showTwoFactor && (
+                                        <FormField disabled={isPending} control={form.control} name="code" render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>
+                                                    Two factor code
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <Input {...field} placeholder="123456" />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )} />
+                                    )}
+                                    {!showTwoFactor && (
+                                        <>
+                                            <FormField disabled={isPending} control={form.control} name="email" render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel>
+                                                        Email
+                                                    </FormLabel>
+                                                    <FormControl>
+                                                        <Input {...field} placeholder="Email address" type="email" />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )} />
+                                            <FormField disabled={isPending} control={form.control} name="password" render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel>
+                                                        Password
+                                                    </FormLabel>
+                                                    <FormControl>
+                                                        <Input {...field} placeholder="******" type="password" />
+                                                    </FormControl>
+                                                    <Button asChild variant="link" size="sm" className="px-0 font-normal">
+                                                        <Link href="/auth/reset">
+                                                            Forgot password
+                                                        </Link>
+                                                    </Button>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )} />
+                                        </>
+                                    )}
+                                    <FormError message={error || UrlError} />
+                                    <FormSuccess message={success} />
+                                    <Social />
+                                    <Button disabled={isPending} type="submit" className="w-full">
+                                        {showTwoFactor ? "Confirm" : "Login"}
+                                    </Button>
+                                    <div className="flex justify-center items-center">
+                                        <Button variant="link" size="sm" className="mt-4" asChild>
+                                            <Link href="/auth/register">
+                                                Don&apos;t have an account? Register
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </form>
+                            </Form>
+                        </CardWrapper>
+                    </motion.div>
+                    <motion.div
+                        initial="offscreen"
+                        animate="onscreen"
+                        exit="exitscreen"
+                        variants={cardVariantsFadeIn}
+                        className="md:w-1/2 w-full h-full flex md:hidden items-center justify-center"
                     >
                         <CardWrapper headerLabel="Welcome back!">
                             <Form {...form}>

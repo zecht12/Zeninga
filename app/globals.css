@@ -106,3 +106,19 @@ html,body,:root{
     @apply bg-background text-foreground;
   }
 }
+
+.underline-title {
+  position: relative;
+}
+
+.underline-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: white;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
