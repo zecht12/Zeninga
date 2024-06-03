@@ -92,6 +92,7 @@ const MangaSearch: React.FC<MangaSearchProps> = ({ onSearch }) => {
                                                     <SelectItem value="bestMatch">Best Match</SelectItem>
                                                     <SelectItem value="latestUpload">Latest Upload</SelectItem>
                                                     <SelectItem value="oldestUpload">Oldest Upload</SelectItem>
+                                                    
                                                     <SelectItem value="titleAscending">Title Ascending</SelectItem>
                                                     <SelectItem value="titleDescending">Title Descending</SelectItem>
                                                     <SelectItem value="highestRating">Highest Rating</SelectItem>
