@@ -114,7 +114,7 @@ html,body,:root{
 .underline-title::after {
   content: '';
   display: block;
-  width: 60%;
+  width: 40%;
   height: 3px;
   background: white;
   position: absolute;

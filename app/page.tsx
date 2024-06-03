@@ -12,7 +12,7 @@ export default function Home() {
           <Image src="/avatar.jpg" alt="image" width={200} height={200} className='rounded-full shadow-xl shadow-slate-600' />
         </div>
         <h1 className="text-6xl font-CodecProExtraBold text-white drop-shadow-md">
-            Welcome to <span className="text-[#58d8fc]">Zeninga</span>
+            Welcome to <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Zeninga</span>
           </h1>
           <p className={cn("text-white text-lg", body.className)}>
             Make your dream come true

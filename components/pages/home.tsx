@@ -11,16 +11,16 @@ import Checkout from '../shared/checkout';
 
 export const chooseData = [
     {
-        header: "Unified Experience",
-        description: "Zeninga offers a unique, unified platform where you can enjoy both anime and manga without the hassle of switching between multiple sites. This integration ensures that your favorite shows and series are always within easy reach, providing a streamlined and enjoyable user experience."
+        header: "One-Stop Manga Haven",
+        description: " Zeninga consolidates all your manga needs into one convenient platform. Say goodbye to hopping between different websites to find your favorite titles. With our comprehensive library, everything you need is right here, making your manga journey smooth and hassle-free."
     },
     {
-        header: "Latest Updates",
-        description: "Never miss a beat with Zeninga’s commitment to bringing you the latest episodes and manga chapters as soon as they are released. Our timely updates mean you’ll always be on top of the newest developments in your favorite stories, staying ahead of the curve."
+        header: "Ad-Free Reading",
+        description: " Nothing ruins the flow of a good story like intrusive ads. At Zeninga, we offer an ad-free reading experience, allowing you to immerse yourself fully in the world of manga without interruptions."
     },
     {
-        header: "High-Quality Streaming and Reading",
-        description: "Experience anime in stunning high-definition and manga with crystal-clear images. Our platform ensures that you can enjoy your content in the best possible quality, enhancing your viewing and reading experience."
+        header: "Customer Support",
+        description: "We are committed to providing excellent customer service. Our support team is always ready to assist you with any questions, issues, or feedback. We’re here to ensure your experience with Zeninga is smooth and enjoyable."
     },
     {
         header: "User-Friendly Interface",
@@ -28,73 +28,73 @@ export const chooseData = [
     },
     {
         header: "Personalized Recommendations",
-        description: "Zeninga’s advanced algorithms provide personalized recommendations tailored to your tastes. Discover new anime and manga based on your preferences, ensuring that you always have something exciting to watch or read."
+        description: "Zeninga’s advanced algorithms provide personalized recommendations tailored to your tastes. Discover new anime and manga based on your preferences, ensuring that you always have something exciting to read."
     },
     {
         header: "Curated Collections",
-        description: "Explore curated collections of anime and manga that highlight popular series, hidden gems, and thematic selections. Our expert-curated lists make it easy to find content that resonates with your interests."
+        description: "Explore curated collections of manga that highlight popular series, hidden gems, and thematic selections. Our expert-curated lists make it easy to find content that resonates with your interests."
     },
 ]
 
-export const plans = [
-    {
-        id:1,
-        name: "ZeniLover",
-        duration: "One Day Pass",
-        price: "Rp1.000/day",
-        values:1000,
-        benefits: [
-            "Full access to all anime and manga",
-            "High-quality streaming and reading",
-            "Personalized recommendations",
-            "Exclusive content",
-            "24-hour access"
-        ],
-    },
-    {
-        id: 2,
-        name: "ZeniEnthusiast",
-        duration: "One Week Pass",
-        price: "Rp6.500/week",
-        values:6500,
-        benefits: [
-            "Full access to all anime and manga",
-            "High-quality streaming and reading",
-            "Personalized recommendations",
-            "Exclusive content",
-            "7-day access"
-        ],
-    },
-    {
-        id:3,
-        name: "ZeniPride",
-        duration: "One Month Pass",
-        price: "Rp27.000/month",
-        values:27000,
-        benefits: [
-            "Full access to all anime and manga",
-            "High-quality streaming and reading",
-            "Personalized recommendations",
-            "Exclusive content",
-            "30-day access"
-        ],
-    }
-]
+// export const plans = [
+//     {
+//         id:1,
+//         name: "ZeniLover",
+//         duration: "One Day Pass",
+//         price: "Rp1.000/day",
+//         values:1000,
+//         benefits: [
+//             "Full access to all anime and manga",
+//             "High-quality streaming and reading",
+//             "Personalized recommendations",
+//             "Exclusive content",
+//             "24-hour access"
+//         ],
+//     },
+//     {
+//         id: 2,
+//         name: "ZeniEnthusiast",
+//         duration: "One Week Pass",
+//         price: "Rp6.500/week",
+//         values:6500,
+//         benefits: [
+//             "Full access to all anime and manga",
+//             "High-quality streaming and reading",
+//             "Personalized recommendations",
+//             "Exclusive content",
+//             "7-day access"
+//         ],
+//     },
+//     {
+//         id:3,
+//         name: "ZeniPride",
+//         duration: "One Month Pass",
+//         price: "Rp27.000/month",
+//         values:27000,
+//         benefits: [
+//             "Full access to all anime and manga",
+//             "High-quality streaming and reading",
+//             "Personalized recommendations",
+//             "Exclusive content",
+//             "30-day access"
+//         ],
+//     }
+// ]
 
 export default function HomePaging() {
-    const [selectedProduct, setSelectedProduct] = useState(plans[0]);
+    // const [selectedProduct, setSelectedProduct] = useState(plans[0]);
 
     return (
         <>
-            <div className="h-auto w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 py-28 px-4 md:flex md:flex-col hidden">
+            <div className="h-auto w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 py-28 px-4">
                 <div className='md:flex items-center justify-between'>
                     <div className='md:w-[50%] w-full h-full'>
-                        <h1 className={cn('text-slate-100 md:text-6xl text-4xl font-bold md:text-start text-center', head.className)}>Your Ultimate Web for <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Anime</span> and <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Manga</span>!</h1>
+                        <h1 className={cn('text-slate-100 md:text-6xl text-4xl font-bold md:text-start text-center', head.className)}>Your Ultimate Web for <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Manga</span>!</h1>
                         <p className={cn('text-slate-100 pt-8 text-justify', body.className)}>
-                            Welcome to <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>, the perfect fusion of anime and manga in one place. Dive into the immersive world of Japanese pop culture where you can stream the latest anime episodes and explore a vast library of manga series, all on a single platform.
+                            Welcome to <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>,  your ultimate destination for all things manga! Dive into a world where every story unfolds at your fingertips. Whether you're a seasoned manga enthusiast or a newcomer looking to explore new adventures, <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span> is your perfect companion on this journey. Experience the magic of manga like never before, all in one place.
                         </p>
                         <p className={cn('text-slate-100 pt-4 text-justify', body.className)}>
-                            At <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>, we believe in delivering an unparalleled experience by bringing together the best of both anime and manga. Whether you’re a seasoned otaku or a newcomer to the world of Japanese animation and comics, <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span> is designed to be your go-to source for all things anime and manga.
+                            At <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>, we believe in delivering an unparalleled experience by bringing together the best of manga. Whether you’re a seasoned otaku or a newcomer to the world of Japanese comics, <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span> is designed to be your go-to source for all things manga.
                         </p>
                         <div className='py-8 md:w-[50%] h-auto flex justify-center items-center'>
                             <Button asChild size="xlhov" variant="newbutton">
@@ -112,31 +112,39 @@ export default function HomePaging() {
                     <h1 className={cn('text-slate-100 md:text-6xl text-4xl font-bold text-center underline-title mb-8', head.className)}>
                         What we're <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Offer</span>?
                     </h1>
+                    <div className='flex items-center justify-center'>
+                        <p className={cn('text-slate-100 md:text-center text-justify md:w-3/5 text-2xl', body.className)}>
+                            At <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>, we pride ourselves on providing a rich and diverse manga reading experience that caters to all tastes and preferences. Here’s a detailed look at what we bring to the <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>:
+                        </p>
+                    </div>
                     <div className='md:flex items-center justify-between py-8'>
                         <div className='md:w-[50%] w-full md:h-[50%] h-full flex items-center md:justify-start justify-center'>
                             <Image width={500} height={500} alt='home' src="/images/2.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
                         </div>
-                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start'>
+                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start md:pt-0 pt-8'>
                             <div className='md:w-[80%] w-full'>
-                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'>Extensive <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Anime</span> Library
+                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'>Extensive <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Vast</span> Library
                                 </h1>
                                 <p className='text-slate-100 pt-8 text-xl text-justify'>
-                                    Dive into our extensive collection of anime, featuring everything from timeless classics to the latest releases. Watch your favorite series in high quality, with new episodes added regularly to keep you up-to-date with the current trends and popular shows.
+                                    Our expansive library boasts thousands of manga titles across various genres, including action, adventure, romance, comedy, drama, fantasy, horror, sci-fi, and more. Whether you’re looking for the latest hits or timeless classics, you’ll find them all here.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className='md:flex items-center justify-between py-8'>
-                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start'>
+                        <div className='md:w-[50%] w-full md:h-[50%] h-full flex md:hidden items-center md:justify-start justify-center'>
+                            <Image width={500} height={500} alt='home' src="/images/3.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
+                        </div>
+                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start md:pt-0 pt-8'>
                             <div className='md:w-[80%] w-full'>
-                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'>Vast <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Manga</span> Collection
+                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'><span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">High-Quality</span> Scans
                                 </h1>
                                 <p className='text-slate-100 pt-8 text-xl text-justify'>
-                                    Explore our diverse range of manga, spanning numerous genres and titles. Whether you’re into action, romance, fantasy, or slice-of-life, our regularly updated library ensures you'll always have something new and exciting to read.
+                                    We ensure that every manga in our collection is presented with high-resolution scans, offering crisp, clear, and detailed images for an immersive reading experience. Our quality control team meticulously checks each scan to maintain the highest standards.
                                 </p>
                             </div>
                         </div>
-                        <div className='md:w-[50%] w-full md:h-[50%] h-full flex items-center md:justify-start justify-center'>
+                        <div className='md:w-[50%] w-full md:h-[50%] h-full md:flex hidden items-center md:justify-start justify-center'>
                             <Image width={500} height={500} alt='home' src="/images/3.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
                         </div>
                     </div>
@@ -144,27 +152,30 @@ export default function HomePaging() {
                         <div className='md:w-[50%] w-full md:h-[50%] h-full flex items-center md:justify-start justify-center'>
                             <Image width={500} height={500} alt='home' src="/images/4.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
                         </div>
-                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start'>
+                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start md:pt-0 pt-8'>
                             <div className='md:w-[80%] w-full'>
-                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'>Exclusive <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Content</span>
+                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'><span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Frequent</span> Updates
                                 </h1>
                                 <p className='text-slate-100 pt-8 text-xl text-justify'>
-                                    Gain access to exclusive content available only on Zeninga. From special episodes and manga chapters to unique features and events, enjoy a premium experience that goes beyond the ordinary.
+                                    We understand the anticipation of waiting for new chapters. That’s why we update our library regularly, adding the latest releases as soon as they are available. Stay current with ongoing series and discover new stories as they unfold.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className='md:flex items-center justify-between py-8'>
-                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start'>
+                        <div className='md:w-[50%] w-full md:h-[50%] h-full flex md:hidden items-center md:justify-start justify-center md:pt-0 pt-4'>
+                            <Image width={500} height={500} alt='home' src="/images/5.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
+                        </div>
+                        <div className='md:w-[50%] w-full h-full md:flex items-center justify-start md:pt-0 py-8'>
                             <div className='md:w-[80%] w-full'>
-                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'>Seamless <span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Integration</span>
+                                <h1 className='text-slate-100 text-4xl font-bold md:text-justify text-center'><span className="inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Seamless</span> Integration
                                 </h1>
                                 <p className='text-slate-100 pt-8 text-xl text-justify'>
                                     Experience the ultimate convenience with Zeninga seamless integration. Manage synchronized watch and read lists, receive personalized recommendations based on your interests, and enjoy our user-friendly navigation designed to make finding your next favorite series a breeze.
                                 </p>
                             </div>
                         </div>
-                        <div className='md:w-[50%] w-full md:h-[50%] h-full flex items-center md:justify-start justify-center'>
+                        <div className='md:w-[50%] w-full md:h-[50%] h-full md:flex hidden items-center md:justify-start justify-center md:pt-0 pt-4'>
                             <Image width={500} height={500} alt='home' src="/images/5.jpg" className='md:w-[500px] w-[300px] md:h-[500px] h-[300px]' />
                         </div>
                     </div>
@@ -174,26 +185,31 @@ export default function HomePaging() {
                         <h1 className={cn('text-slate-100 md:text-6xl text-4xl font-bold text-center underline-title mb-8', head.className)}>
                             Why <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Choose</span> Us?
                         </h1>
+                        <div className='flex items-center justify-center'>
+                            <p className={cn('text-slate-100 md:text-center text-justify md:w-3/5 text-2xl', body.className)}>
+                                Choosing <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span>means embracing a manga reading experience that’s tailored to meet the needs and desires of avid readers. Here’s why <span className={cn("inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent", bodyBold.className)}>Zeninga</span> is the best choice for manga enthusiasts:
+                            </p>
+                        </div>
                     </div>
                     <div className='grid lg:grid-cols-3 grid-cols-1 gap-6'>
                         {chooseData.map((item, index) => (
-                                <Card className='hover:scale-110' key={index}>
-                                    <CardHeader className=''>
-                                        <h1 className='text-2xl font-bold text-justify underline-title-card'>
-                                            {item.header}
-                                        </h1>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription className='text-lg text-justify pt-4'>
-                                            {item.description}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
-                            ))
+                            <Card className='hover:scale-110' key={index}>
+                                <CardHeader className=''>
+                                    <h1 className='text-2xl font-bold text-justify underline-title-card'>
+                                        {item.header}
+                                    </h1>
+                                </CardHeader>
+                                <CardContent>
+                                    <CardDescription className='text-lg text-justify pt-4'>
+                                        {item.description}
+                                    </CardDescription>
+                                </CardContent>
+                            </Card>
+                        ))
                         }
                     </div>
                 </div>
-                <div id='plans' className='w-full h-full pt-14'>
+                {/* <div id='plans' className='w-full h-full pt-14'>
                     <div className='pb-8'>
                         <h1 className={cn('text-slate-100 md:text-6xl text-4xl font-bold text-center underline-title mb-8', head.className)}>
                             Our <span className={cn('inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Plans</span>
@@ -237,7 +253,7 @@ export default function HomePaging() {
                         ))
                         }
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     );

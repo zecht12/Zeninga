@@ -4,9 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {HiHome} from 'react-icons/hi2';
 import { IoPerson } from "react-icons/io5";
+import { FaBookOpen } from 'react-icons/fa';
+import { TbBookOff, TbBook } from "react-icons/tb";
 
 export const navData = [
-    { name: 'Home', path: '#home', icon: <HiHome /> },
+    { name: 'Home', path: '/zhome', icon: <HiHome /> },
+    { name: 'Manga', path: '/manga', icon: <TbBook /> },
+    { name: '18+ Manga', path: '/manga18', icon: <TbBookOff /> },
 ];
 
 const Sidebar = () => {

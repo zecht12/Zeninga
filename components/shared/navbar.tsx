@@ -53,11 +53,11 @@ const Navbar = () => {
                         <Link href='/home' className='flex justify-center items-center scroll-smooth transition delay-100'>
                             <Image src={'/avatar.jpg'} width={40} height={40} alt="logo" priority={true} className="w-[40px] h-[40px] hover:scale-110 rounded-full shadow-md shadow-slate-500" />
                         </Link>
-                        <p className={cn('text-2xl font-bold cursor-default text-[#58d8fc]', head.className)}>Zeninga</p>
+                        <p className={cn('text-2xl font-bold cursor-default inline bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent', head.className)}>Zeninga</p>
                     </div>
-                    <div className='md:flex justify-around items-center gap-3'>
-                        <p className={cn('md:text-lg text-sm font-bold cursor-default text-[#58d8fc] text-justify', head.className)}>Animanga World in One</p>
-                        <div className='gap-3 p-2 md:py-1 md:px-2 border-[1px] border-neutral-300 rounded-full bg-slate-200 flex justify-around items-center shadow-sm shadow-neutral-500'>
+                    <div className='md:flex justify-around items-center md:gap-3'>
+                        <p className={cn('md:text-lg text-sm font-bold cursor-default bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent text-justify md:flex hidden', head.className)}>Powerfull Manga World</p>
+                        <div className='gap-3 p-2 md:py-1 md:px-2 px-6 border-[1px] border-neutral-300 rounded-full bg-slate-200 flex justify-around items-center shadow-sm shadow-neutral-500'>
                             <Avatar src={user?.image} />
                             <div className="relative">
                                 <AiOutlineMenu size={25} onClick={toggleMenu} className="text-black hover:text-blue-600 cursor-pointer" />

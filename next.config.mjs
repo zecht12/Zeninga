@@ -8,7 +8,10 @@ const nextConfig = {
             'cdn.waifu.im',
             'i.waifu.pics'
         ]
-    }
+    },
+    env: {
+        NEXT_PUBLIC_MANGADEX_ENDPOINT: process.env.NEXT_PUBLIC_MANGADEX_ENDPOINT,
+    },
 };
 
 export default nextConfig;
