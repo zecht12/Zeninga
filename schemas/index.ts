@@ -1,6 +1,18 @@
 import * as z from "zod";
 import { UserRole } from "@prisma/client";
 
+export interface MangaAttributes {
+    title: {
+        en?: string;
+        jp?: string;
+    };
+}
+
+export interface Manga {
+    attributes: MangaAttributes;
+}
+
+
 export const SettingsSchema = z.object({
     name: z.optional(z.string()),
     isTwoFactorEnabled: z.optional(z.boolean()),
