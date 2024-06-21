@@ -6,7 +6,11 @@ const nextConfig = {
             'lh3.googleusercontent.com',
             'res.cloudinary.com',
             'cdn.waifu.im',
-            'i.waifu.pics'
+            'i.waifu.pics',
+            'i.nhentai.net',
+            't3.nhentai.net',
+            'nhentai.net',
+            't7.nhentai.net'
         ]
     },
     env: {

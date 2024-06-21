@@ -11,7 +11,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FormError } from "../login-error";
 import { FormSuccess } from "../login-success";
-import { Login } from "@/actions/login";
+import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import Link from "next/link";
 import { Social } from "./social";
@@ -42,7 +42,7 @@ export const LoginForm = () => {
         setError("");
         setSuccess("");
         startTransition(() => {
-            Login(values, callbackUrl).then((data) => {
+            login(values, callbackUrl).then((data: any) => {
                 if (data?.error) {
                     form.reset();
                     setError(data.error);

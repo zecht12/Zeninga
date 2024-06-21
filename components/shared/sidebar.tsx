@@ -3,14 +3,15 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {HiHome} from 'react-icons/hi2';
-import { IoPerson } from "react-icons/io5";
-import { FaBookOpen } from 'react-icons/fa';
-import { TbBookOff, TbBook } from "react-icons/tb";
+import { TbBookOff } from "react-icons/tb";
+import { GiCardRandom } from "react-icons/gi";
+import { FaTags } from "react-icons/fa6";
 
 export const navData = [
-    { name: 'Home', path: '/zhome', icon: <HiHome /> },
-    { name: 'Manga', path: '/manga', icon: <TbBook /> },
+    { name: 'Home', path: '/home', icon: <HiHome /> },
     { name: '18+ Manga', path: '/manga18', icon: <TbBookOff /> },
+    { name: 'Random Manga', path: '/manga18/random', icon: <GiCardRandom /> },
+    { name: 'Tags', path: '/manga18/tag', icon: <FaTags /> },
 ];
 
 const Sidebar = () => {

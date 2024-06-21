@@ -4,7 +4,7 @@ import { Card, CardFooter, CardHeader } from "../ui/card"
 
 const ErrorCard = () => {
     return (
-        <Card className="w-[400px] shadow-md ">
+        <Card color="white" variant="rounded" className="w-[400px] shadow-md ">
             <CardHeader>
                 <Header label="Terjadi Kesalahan!!!"/>
             </CardHeader>

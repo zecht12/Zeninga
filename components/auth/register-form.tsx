@@ -10,7 +10,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FormError } from "../login-error";
 import { FormSuccess } from "../login-success";
-import { Register } from "@/actions/register";
+import { register } from "@/actions/register";
 import { useState, useTransition } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useIsDesktop from "@/hooks/use-is-desktop";
@@ -37,7 +37,7 @@ export const RegisterForm = () => {
         setError("");
         setSuccess("");
         startTransition(() => {
-            Register(values).then((data) => {
+            register(values).then((data: any) => {
                 setError(data.error),
                     setSuccess(data.success)
             });

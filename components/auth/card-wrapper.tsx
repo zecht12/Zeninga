@@ -14,7 +14,7 @@ interface CardWrapperProps{
 
 export const CardWrapper = ({children, headerLabel}:CardWrapperProps) => {
     return (
-        <Card className="w-[400px] shadow-md">
+        <Card color="white" variant="rounded" className="w-[400px] shadow-md">
             <CardHeader>
                 <Header label={headerLabel}/>
             </CardHeader>

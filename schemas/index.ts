@@ -1,17 +1,50 @@
 import * as z from "zod";
 import { UserRole } from "@prisma/client";
 
-export interface MangaAttributes {
-    title: {
-        en?: string;
-        jp?: string;
-    };
-}
+const TagSchema = z.object({
+    id: z.string().uuid(),
+    name: z.string(),
+});
 
-export interface Manga {
-    attributes: MangaAttributes;
-}
+const UserSchema = z.object({
+    id: z.string().uuid(),
+    name: z.optional(z.string()),
+    email: z.string().email(),
+});
 
+const LanguageSchema = z.object({
+    id: z.string().uuid(),
+    name: z.string(),
+});
+
+const CategorySchema = z.object({
+    id: z.string().uuid(),
+    name: z.string(),
+});
+
+const ImageSchema = z.object({
+    id: z.string().uuid(),
+    url: z.string().url(),
+});
+
+export const FavoriteSchema = z.object({
+    id: z.string().uuid(),
+    title: z.optional(z.string()),
+    originalTitle: z.optional(z.string()),
+    cover: z.optional(z.string().url()),
+    url: z.optional(z.string().url()),
+    userId: z.string().uuid(),
+    user: z.array(UserSchema),
+    createdAt: z.string().optional(),
+    parodies: z.array(z.string().uuid()).optional(),
+    characters: z.array(z.string().uuid()).optional(),
+    tags: z.array(TagSchema).optional(),
+    artists: z.array(z.string().uuid()).optional(),
+    groups: z.array(z.string().uuid()).optional(),
+    languages: z.array(LanguageSchema).optional(),
+    categories: z.array(CategorySchema).optional(),
+    images: z.array(ImageSchema).optional(),
+});
 
 export const SettingsSchema = z.object({
     name: z.optional(z.string()),
@@ -24,24 +57,22 @@ export const SettingsSchema = z.object({
 })
     .refine((data) => {
         if (data.password && !data.newPassword) {
-        return false;
+            return false;
         }
-
         return true;
     }, {
         message: "Password baru dibutuhkan!",
-        path: ["newPassword"]
+        path: ["newPassword"],
     })
     .refine((data) => {
         if (data.newPassword && !data.password) {
-        return false;
+            return false;
         }
-
         return true;
     }, {
         message: "Password Dibutuhkan!",
-        path: ["password"]
-    })
+        path: ["password"],
+    });
 
 export const NewPasswordSchema = z.object({
     password: z.string().min(6, {
@@ -76,4 +107,3 @@ export const RegisterSchema = z.object({
         message: "Nama dibutuhkan",
     }),
 });
-

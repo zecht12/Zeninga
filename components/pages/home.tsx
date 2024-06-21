@@ -9,7 +9,7 @@ import { body, bodyBold, button, head } from '@/utils/font';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '../ui/card';
 import Checkout from '../shared/checkout';
 
-export const chooseData = [
+const chooseData = [
     {
         header: "One-Stop Manga Haven",
         description: " Zeninga consolidates all your manga needs into one convenient platform. Say goodbye to hopping between different websites to find your favorite titles. With our comprehensive library, everything you need is right here, making your manga journey smooth and hassle-free."
@@ -36,53 +36,52 @@ export const chooseData = [
     },
 ]
 
-// export const plans = [
-//     {
-//         id:1,
-//         name: "ZeniLover",
-//         duration: "One Day Pass",
-//         price: "Rp1.000/day",
-//         values:1000,
-//         benefits: [
-//             "Full access to all anime and manga",
-//             "High-quality streaming and reading",
-//             "Personalized recommendations",
-//             "Exclusive content",
-//             "24-hour access"
-//         ],
-//     },
-//     {
-//         id: 2,
-//         name: "ZeniEnthusiast",
-//         duration: "One Week Pass",
-//         price: "Rp6.500/week",
-//         values:6500,
-//         benefits: [
-//             "Full access to all anime and manga",
-//             "High-quality streaming and reading",
-//             "Personalized recommendations",
-//             "Exclusive content",
-//             "7-day access"
-//         ],
-//     },
-//     {
-//         id:3,
-//         name: "ZeniPride",
-//         duration: "One Month Pass",
-//         price: "Rp27.000/month",
-//         values:27000,
-//         benefits: [
-//             "Full access to all anime and manga",
-//             "High-quality streaming and reading",
-//             "Personalized recommendations",
-//             "Exclusive content",
-//             "30-day access"
-//         ],
-//     }
-// ]
+const plans = [
+    {
+        id:1,
+        name: "ZeniLover",
+        duration: "One Day Pass",
+        price: "Rp1.000/day",
+        values:1000,
+        benefits: [
+            "Full access to all manga without limitation",
+            "Personalized recommendations",
+            "Exclusive content",
+            "24-hour access"
+        ],
+    },
+    {
+        id: 2,
+        name: "ZeniEnthusiast",
+        duration: "One Week Pass",
+        price: "Rp6.500/week",
+        values:6500,
+        benefits: [
+            "Full access to all manga without limitation",
+            "High-quality reading",
+            "Personalized recommendations",
+            "Exclusive content",
+            "7-day access"
+        ],
+    },
+    {
+        id:3,
+        name: "ZeniPride",
+        duration: "One Month Pass",
+        price: "Rp27.000/month",
+        values:27000,
+        benefits: [
+            "Full access to all manga without limitation",
+            "High-quality reading",
+            "Personalized recommendations",
+            "Exclusive content",
+            "30-day access"
+        ],
+    }
+]
 
 export default function HomePaging() {
-    // const [selectedProduct, setSelectedProduct] = useState(plans[0]);
+    const [selectedProduct, setSelectedProduct] = useState(plans[0]);
 
     return (
         <>
@@ -193,7 +192,7 @@ export default function HomePaging() {
                     </div>
                     <div className='grid lg:grid-cols-3 grid-cols-1 gap-6'>
                         {chooseData.map((item, index) => (
-                            <Card className='hover:scale-110' key={index}>
+                            <Card color="white" variant='rounded' className='hover:scale-110' key={index}>
                                 <CardHeader className=''>
                                     <h1 className='text-2xl font-bold text-justify underline-title-card'>
                                         {item.header}
@@ -217,7 +216,7 @@ export default function HomePaging() {
                     </div>
                     <div className='grid lg:grid-cols-3 grid-cols-1 gap-6'>
                         {plans.map((plan, index) => (
-                            <Card 
+                            <Card color="white" variant="rounded" 
                                 className={cn('relative border-4 bg-slate-100', {
                                     'border-blue-500': plan.name === "ZeniEnthusiast"
                                 }, head.className)} 
