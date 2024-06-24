@@ -17,6 +17,16 @@ const allTags = [
     { id: 12, tag: 'Birth', value: 'birth' },
     { id: 13, tag: 'Pregnant', value: 'pregnant' },
     { id: 14, tag: 'Brother', value: 'brother' },
+    { id: 15, tag: 'Sleeping', value: 'sleeping' },
+    { id: 16, tag: 'Slave', value: 'slave' },
+    { id: 17, tag: 'Masturbation', value: 'masturbation' },
+    { id: 18, tag: 'Paizuri', value: 'paizuri' },
+    { id: 19, tag: 'Blowjob', value: 'blowjob' },
+    { id: 20, tag: 'Shotacon', value: 'shotacon' },
+    { id: 21, tag: 'Blindfold', value: 'blindfold' },
+    { id: 22, tag: 'Rape', value: 'rape' },
+    { id: 23, tag: 'Blood', value: 'blood' },
+    { id: 24, tag: 'Virginity', value: 'virginity' },
 ];
 
 const Tags = () => {
@@ -24,7 +34,7 @@ const Tags = () => {
         <div className="h-auto w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#153067] to-zinc-900 py-28 px-4">
             <div className="flex flex-wrap gap-8 justify-center items-center">
                 {allTags.map((tag) => (
-                    <Link key={tag.id} href={`/manga18/search-result/${String(tag.value)}/1`} className='cursor-pointer'>
+                    <Link key={tag.id} href={`/manga18/search-result/${String(tag.value)}/1`} className='cursor-pointer hover:scale-110'>
                         <Card color='gray' className="w-[150px] h-auto flex flex-col justify-start items-center text-slate-100">
                             {tag.tag}
                         </Card>

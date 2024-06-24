@@ -40,6 +40,7 @@ PaginationItem.displayName = "PaginationItem"
 
 type PaginationLinkProps = {
   isActive?: boolean
+  color?: "black" | "white"
 } & Pick<ButtonProps, "size"> &
   React.ComponentProps<"a">
 
@@ -47,11 +48,15 @@ const PaginationLink = ({
   className,
   isActive,
   size = "icon",
+  color = "black",
   ...props
 }: PaginationLinkProps) => (
   <a
     aria-current={isActive ? "page" : undefined}
-    className={cn("text-slate-100 hover:text-black",
+    className={cn(
+      color === "black"
+        ? "text-slate-100 hover:text-black"
+        : "text-black hover:text-slate-700",
       buttonVariants({
         variant: isActive ? "outline" : "ghost",
         size,
@@ -65,12 +70,18 @@ PaginationLink.displayName = "PaginationLink"
 
 const PaginationPrevious = ({
   className,
+  color = "black",
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
+}: React.ComponentProps<typeof PaginationLink> & { color?: "black" | "white" }) => (
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2.5 text-slate-100 hover:text-black", className)}
+    color={color}
+    className={cn(
+      "gap-1 pl-2.5",
+      color === "black" ? "text-slate-100 hover:text-black" : "text-black hover:text-slate-700",
+      className
+    )}
     {...props}
   >
     <ChevronLeftIcon className="h-4 w-4" />
@@ -81,12 +92,18 @@ PaginationPrevious.displayName = "PaginationPrevious"
 
 const PaginationNext = ({
   className,
+  color = "black",
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
+}: React.ComponentProps<typeof PaginationLink> & { color?: "black" | "white" }) => (
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pr-2.5 text-slate-100 hover:text-black", className)}
+    color={color}
+    className={cn(
+      "gap-1 pr-2.5",
+      color === "black" ? "text-slate-100 hover:text-black" : "text-black hover:text-slate-700",
+      className
+    )}
     {...props}
   >
     <span>Next</span>
@@ -97,14 +114,19 @@ PaginationNext.displayName = "PaginationNext"
 
 const PaginationEllipsis = ({
   className,
+  color = "black",
   ...props
-}: React.ComponentProps<"span">) => (
+}: React.ComponentProps<"span"> & { color?: "black" | "white" }) => (
   <span
     aria-hidden
-    className={cn("flex h-9 w-9 items-center justify-center", className)}
+    className={cn(
+      "flex h-9 w-9 items-center justify-center",
+      color === "black" ? "text-slate-100 hover:text-black" : "text-black hover:text-slate-700",
+      className
+    )}
     {...props}
   >
-    <DotsHorizontalIcon className="h-4 w-4 text-slate-100 hover:text-black" />
+    <DotsHorizontalIcon className="h-4 w-4" />
     <span className="sr-only">More pages</span>
   </span>
 )

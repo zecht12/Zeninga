@@ -18,16 +18,29 @@ const ShowMangaPage = async ({ params }: any) => {
     });
 
     const data = await nhentai.getDoujin(id);
-    console.log(data)
-    const images = data.images.pages;
+
     if (!data) {
         return <div>No data found</div>;
     }
 
-    const downloads = `https://nhentai.net/g/${data.id}/download`
+    const plainData = {
+        title: data.title,
+        originalTitle: data.originalTitle,
+        cover: data.cover || null,
+        parodies: data.parodies,
+        tags: data.tags,
+        artists: data.artists,
+        groups: data.groups,
+        languages: data.languages,
+        categories: data.categories,
+    };
 
-    return(
-        <ShowManga data={data} downloads={downloads} images={images} />
+    const images = data.images.pages;
+
+    const downloads = `https://nhentai.net/g/${data.id}/download`;
+
+    return (
+        <ShowManga data={plainData} downloads={downloads} images={images} />
     );
 };
 
